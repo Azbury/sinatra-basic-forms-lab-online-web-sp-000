@@ -9,8 +9,7 @@ class App < Sinatra::Base
   end
 
   post '/puppy' do
-    puppy_hash = {name: = params[:name], age: = params[:months_old], breed: = params[:breed]}
-    @puppy = Puppy.new(puppy_hash)
+    @puppy = Puppy.new({:age = params[:months_old], :breed = params[:breed], :name = params[:name]})
     erb :display_puppy
   end
 end
